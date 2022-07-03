@@ -1,0 +1,28 @@
+Conta Bancária -> Objeto
+
+Jubileu -> Poupança, R$300,00
+Creuza -> Conta Corrente, R$500,00, Saca R$100,00
+
+Classe Conta Bancária
+
+- public  n. conta -> numConta
+- protected tipo -> CC ou CP (Somente esses valores)
+- private dono -> propietário da conta
+- private saldo
+- private status -> aberta, fechada
+
+Métodos
+
+- abrirConta() -> (Modifica atrubuto status para verdadeiro(aberta)
+    ou falso(fechada)) Ao abrir conta corrente - R$50, CP - R$150,00
+- fecharConta() -> Para fechar não pode ter dinheiro dentro ou débito
+- depositar() -> Para depositar o status tem de estar verdadeiro
+- sacar() -> Só pode sacar se tiver saldo
+- pagarMensalidade() -> Ao chamar o método a mensalidade vai ser paga
+    CC -> 12,00 CP -> 20,00
+    
+<< todps os métodos públicos >>
+
+-- todos os atributos tem os seus getters e setters --
+
+Sempre que uma nova conta for criada status falso, saldo 0;
