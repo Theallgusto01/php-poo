@@ -56,18 +56,18 @@ class Conta {
     /*Metódos da Classe */
 
     public function abrirConta(){
-        if($this->tipo == "CC"){
-            $this->saldo += 50;
+        if($this->getTipo() == "CC"){
+            $this->setSaldo(50);
             echo "Conta Corrente aberta! Saldo de R$50,00 Adicionado!<br/>";
         }else{
-            $this->saldo += 150;
+            $this->setSaldo(150);
             echo "Conta Poupança aberta! Saldo de R$150,00 Adicionado<br/>";
         }
         $this->setStatus(true);
 
     }
     public function fecharConta(){
-        if($this->saldo == 0){
+        if($this->getSaldo() == 0){
             $this->setStatus(false);
             echo "Conta Encerrada!<br/>";
         }else{
@@ -76,18 +76,22 @@ class Conta {
     }
     public function depositar($tanto){
         if($this->getStatus() == true){
-            $this->saldo += $tanto;
-            echo "Você depositou: R$ $tanto<br/>";
+            $this->setSaldo($this->getSaldo() + $tanto);
+            echo "{$this->getDono()} depositou: R$ $tanto<br/>";
         }else{
             echo "Conta não está aberta!<br/>";
         }
     }
     public function sacar($quantia){
-        if($this->saldo >= $quantia){
-            $this->saldo -= $quantia;
-            echo "Você sacou: R$ $quantia<br/>";
+        if ($this->getStatus()){
+            if($this->getSaldo() >= $quantia){
+                $this->setSaldo($this->getSaldo() - $quantia);
+                echo "{$this->getDono()} sacou: R$ $quantia<br/>";
+            }else{
+                echo "Saldo Insuficiente";
+            }
         }else{
-            echo "Saldo Insuficiente";
+            echo "A conta não está aberta!";
         }
     }
     public function pagarMensalidade(){
