@@ -9,8 +9,7 @@
     <?php 
     require_once 'ControleRemoto.php';
     $controle = new ControleRemoto();
-
-    $controle->setLigado(true);
+    $controle->ligar();
    
     // $controle->setTocando(true);
     $controle->play();
