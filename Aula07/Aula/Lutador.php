@@ -22,57 +22,56 @@ class Lutador implements PerfilLutador{
         $this->setNacionalidade($nacio);
         $this->setAltura($altura);
         $this->setPeso($peso);
-        $this->setCategoria($categoria);
         $this->setVitorias($vitorias);
         $this->setDerrotas($derr);
         $this->setEmpates($emp);
     }
 
-    private function getNome(){
+    public function getNome(){
         return $this->nome;
     }
-    private function getNacionalidade(){
+    public function getNacionalidade(){
         return $this->nacionalidade;
     }
-    private function getIdade(){
+    public function getIdade(){
         return $this->idade;
     }
-    private function getAltura(){
+    public function getAltura(){
         return $this->altura;
     }
-    private function getPeso(){
+    public function getPeso(){
         return $this->peso;
     }
-    private function getCategoria(){
+    public function getCategoria(){
         return $this->categoria;
     }
-    private function getVitorias(){
+    public function getVitorias(){
         return $this->vitorias;
     }
-    private function getDerrotas(){
+    public function getDerrotas(){
         return $this->derrotas;
     }
-    private function getEmpates(){
+    public function getEmpates(){
         return $this->empates;
     }
 
-    private function setNome($nome){
+    public function setNome($nome){
         $this->nome = $nome;
     }
-    private function setIdade($idade){
+    public function setIdade($idade){
         $this->idade = $idade;
     }
-    private function setNacionalidade($nacio){
+    public function setNacionalidade($nacio){
         $this->nacionalidade = $nacio;
     }
-    private function setAltura($altura){
+    public function setAltura($altura){
         $this->altura = $altura;
     }
-    private function setPeso($peso){
+    public function setPeso($peso){
         $this->peso = $peso;
         $this->setCategoria();
     }
-    private function setCategoria(){
+    public function setCategoria(){
         if ($this->getPeso() < 52.2){
             $this->categoria = "Inválido";
         }elseif( $this->getPeso() <= 70.3){
@@ -85,13 +84,13 @@ class Lutador implements PerfilLutador{
             $this->categoria = "Inválido";
         }
     }
-    private function setVitorias($vit){
+    public function setVitorias($vit){
         $this->vitorias = $vit;
     }
-    private function setDerrotas($derr){
+    public function setDerrotas($derr){
         $this->derrotas = $derr;
     }
-    private function setEmpates($emp){
+    public function setEmpates($emp){
         $this->empates = $emp;
     }
 
@@ -128,7 +127,7 @@ class Lutador implements PerfilLutador{
         $this->setDerrotas($this->getDerrotas() + 1);
     }
     public function empatarLuta(){
-        $this->setEmpates(getEmpates() + 1);
+        $this->setEmpates($this->getEmpates() + 1);
     }
 
 
